@@ -1,0 +1,14 @@
+{
+  "name": "challenges",
+  "version": "1.0.0",
+  "description": "## Overview",
+  "main": "challenges-02.test.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^25.2.4"
+  }
+}
