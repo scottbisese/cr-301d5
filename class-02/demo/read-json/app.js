@@ -15,13 +15,6 @@ Dog.prototype.render = function(container) {
   $dog.find('.dog-name').text(this.name);
   $dog.find('img.dog-image').attr('src', this.image_url);
   $container.append($dog);
-
-  // $(container).append(`
-  //   <div>
-  //     <h2>${this.name}</h2>
-  //     <img src="${this.image_url}" />
-  //   </div>
-  // `)
 }
 
 $('main section').hide();
@@ -30,15 +23,11 @@ const ajaxSettings = {
   method: 'get',
   dataType: 'json'
 };
-console.log('about to AJAX', ajaxSettings);
+
 $.ajax('data.json', ajaxSettings)
   .then(function (data) {
-    console.log(data);
-
 
     data.forEach(dog => {
-      console.log(dog.name);
-
       let actualDog = new Dog(dog);
       actualDog.render('main section');
     })
@@ -46,5 +35,3 @@ $.ajax('data.json', ajaxSettings)
     $('.spinner').slideUp(5000);
     $('main section').fadeIn(1000);
   });
-
-  // $.get('data.json').then(...)
